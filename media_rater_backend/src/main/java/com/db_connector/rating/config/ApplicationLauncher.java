@@ -6,7 +6,7 @@
  * for the program to work, waking up maven and related elements.
  */
 
-package com.db_connector.media_rater.config;
+package com.db_connector.rating.config;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
