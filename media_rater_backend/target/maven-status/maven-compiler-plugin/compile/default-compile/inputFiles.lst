@@ -1,0 +1,9 @@
+C:\Users\junsh\Documents\Projects\media_rating\media_rater_backend\src\main\java\com\db_connector\rating\backend\controller\MovieController.java
+C:\Users\junsh\Documents\Projects\media_rating\media_rater_backend\src\main\java\com\db_connector\rating\backend\model\Movie.java
+C:\Users\junsh\Documents\Projects\media_rating\media_rater_backend\src\main\java\com\db_connector\rating\backend\repositories\MovieRepository.java
+C:\Users\junsh\Documents\Projects\media_rating\media_rater_backend\src\main\java\com\db_connector\rating\backend\repositories\sqlite\SqliteMovieRepository.java
+C:\Users\junsh\Documents\Projects\media_rating\media_rater_backend\src\main\java\com\db_connector\rating\backend\service\MovieService.java
+C:\Users\junsh\Documents\Projects\media_rating\media_rater_backend\src\main\java\com\db_connector\rating\config\ApplicationLauncher.java
+C:\Users\junsh\Documents\Projects\media_rating\media_rater_backend\src\main\java\com\db_connector\rating\interaction\AlterTypes.java
+C:\Users\junsh\Documents\Projects\media_rating\media_rater_backend\src\main\java\com\db_connector\rating\interaction\DatabaseConnection.java
+C:\Users\junsh\Documents\Projects\media_rating\media_rater_backend\src\main\java\com\db_connector\rating\interaction\DatabaseInitializer.java

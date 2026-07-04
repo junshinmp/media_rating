@@ -8,14 +8,15 @@
  * to alter or transfer data to the database itself.
  */
 
-package com.db_connector.media_rater.interaction;
+package com.db_connector.rating.interaction;
 
+import java.io.IOException;
 import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Properties;
-import java.io.IOException;
+
 import org.springframework.stereotype.Component;
 
 @Component

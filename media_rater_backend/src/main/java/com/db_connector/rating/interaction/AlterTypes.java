@@ -8,7 +8,7 @@
  * DatabaseInitalizer class to create statement.
  */
 
-package com.db_connector.media_rater.interaction;
+package com.db_connector.rating.interaction;
 
 public enum AlterTypes {
     ADD("add"),

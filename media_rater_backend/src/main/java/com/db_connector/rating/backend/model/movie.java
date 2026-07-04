@@ -1,5 +1,8 @@
-package main.java.com.db_connector.rating.backend.model;
+package com.db_connector.rating.backend.model;
 
-public class movie {
+import jakarta.persistence.Entity;
+
+@Entity
+public class Movie {
     
 }

@@ -9,7 +9,7 @@
  * executor for the database.
  */
 
-package com.db_connector.media_rater.interaction;
+package com.db_connector.rating.interaction;
 
 import java.sql.Connection;
 import java.sql.SQLException;
