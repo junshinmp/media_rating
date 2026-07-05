@@ -6,15 +6,24 @@
  * for the program to work, waking up maven and related elements.
  */
 
-package com.db_connector.rating.config;
+package com.db_connector.rating;
 
+import io.github.cdimascio.dotenv.Dotenv;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class ApplicationLauncher {
     public static void main(String[] args) {
-        // Runs Spring Boot to start maven and the related components.
+        // Load .env file variables into System properties
+        Dotenv dotenv = Dotenv.configure()
+                .ignoreIfMissing() // Prevents crashes if deployed elsewhere without a physical .env file
+                .load();
+        
+        dotenv.entries().forEach(entry -> 
+            System.setProperty(entry.getKey(), entry.getValue())
+        );
+
         SpringApplication.run(ApplicationLauncher.class, args);
     }
 }

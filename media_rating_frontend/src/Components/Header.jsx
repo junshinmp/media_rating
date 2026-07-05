@@ -1,11 +1,6 @@
 import React, {useState} from "react";
 
-function Header({setCurrentView }){
-
-    const [mediaTitle, setMediaTitle] = useState("");
-    function searchTitle(event){
-        setMediaTitle(event.target.value)
-    }
+function Header({setCurrentView, mediaTitle, setMediaTitle}){
 
     const goToReview = () => {
         setCurrentView('ReviewForm')
@@ -15,6 +10,10 @@ function Header({setCurrentView }){
         setCurrentView('Home')
     }
 
+    const searchButton = () => {
+        setCurrentView('SearchPage')
+    }
+
     return(
         <header>
             <h1>
@@ -22,8 +21,14 @@ function Header({setCurrentView }){
             </h1>
 
             <nav>
-                <input type="text" value={mediaTitle} placeholder="Search for some Media" onChange={searchTitle}/>
-                
+                <input 
+                    type="text" 
+                    value={mediaTitle} 
+                    placeholder="Search for some Media" 
+                    onChange={setMediaTitle}
+                />&nbsp;
+                <button onClick={searchButton}>Search</button>
+
                 <br/>
 
                 <button onClick={goToHome}>Home</button> 

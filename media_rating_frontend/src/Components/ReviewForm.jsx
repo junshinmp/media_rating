@@ -48,14 +48,15 @@ function ReviewForm() {
             <form onSubmit={handleSubmit}>
 
                 {/* DROPDOWN SELECT LIST */}
-                <h3>What type of Media was it?</h3>
+                <label>What type of Media was it?</label>
                 <select value={mediaFormat} onChange={updateMediaFormat}>
                     <option value="Movie">Movie</option>
                     <option value="Show">TV Show</option>
                     <option value="Game">Video Game</option>
                 </select>
+                <br/>
 
-                <h3>What {mediaFormat} did you play/watch? </h3>
+                <label>What {mediaFormat} did you play/watch? </label>
                 <input 
                     type="text"
                     value={mediaTitle} 
@@ -63,9 +64,10 @@ function ReviewForm() {
                     onChange={updateMediaTitle} 
                     required
                 />
+                <br/>
                 
                 {/* RANGE SLIDER (1 - 10) */}
-                <h3>What would you rate this {mediaFormat}? ({rating} / 10)</h3>
+                <label>What would you rate this {mediaFormat}? ({rating} / 10)</label>
                 <input 
                     type="range" 
                     min="1" 
@@ -73,8 +75,9 @@ function ReviewForm() {
                     value={rating} 
                     onChange={updateRating} 
                 />
+                <br/>
 
-                <h3> Any Comments on the {mediaFormat}? </h3>
+                <label> Any Comments on the {mediaFormat}? </label>
                 {/* Changed to a <textarea> so users have room to type longer reviews */}
                 <textarea 
                     value={comments} 
@@ -88,6 +91,8 @@ function ReviewForm() {
                 <button type="submit">Submit Review</button>
 
             </form>
+            
+            <hr/>
         </div>
     );
 }
