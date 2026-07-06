@@ -8,8 +8,7 @@ create table if not exists user (
 
 create table if not exists rating (
     rating_id integer primary key autoincrement,
-    media_id integer not null,
-    media_title varchar(254) not null,
+    media_id varchar(255) not null,
     stars int check (stars >= 1 and stars <= 5) not null,
     user_id integer not null,
     comments varchar(600),

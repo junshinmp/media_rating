@@ -27,9 +27,9 @@ public class DatabaseConnection {
      * Used to load the properties from the config.properties file upon being loaded into memory
      */
     static {
-        try(InputStream input = DatabaseConnection.class.getClassLoader().getResourceAsStream("config.properties")){
+        try(InputStream input = DatabaseConnection.class.getClassLoader().getResourceAsStream("application.properties")){
             if (input == null) {
-                throw new RuntimeException("Unable to find config.properties");
+                throw new RuntimeException("Unable to find application.properties");
             }
             properties.load(input);
         } catch (IOException e){

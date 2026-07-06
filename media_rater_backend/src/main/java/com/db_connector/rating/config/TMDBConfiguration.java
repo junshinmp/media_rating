@@ -1,21 +1,17 @@
 package com.db_connector.rating.config;
 
-import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.client.RestClient;
 
 @Configuration
 public class TMDBConfiguration {
-    @Value("${tmdb.api.key}")
-    private String api_key;
-
-    private final String url_base = "https://api.themoviedb.org/3";
-
-    public String getApiKey(){
-        return api_key;
-    }
-
-    public String getUrlBase(){
-        return url_base;
+    @Bean
+    public RestClient tmdbRestClient() {
+        return RestClient.builder()
+                .baseUrl("https://api.themoviedb.org/3")
+                .defaultHeader("accept", "application/json")
+                .build();
     }
 
 }

@@ -8,8 +8,8 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "user")
-public class User {
+@Table(name = "app_user")
+public class AppUser {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "user_id")
@@ -26,7 +26,7 @@ public class User {
     private String password;
 
     // Default constructor for Spring Data JBA
-    public User(){}
+    public AppUser(){}
 
     // setters and getters
     public int getUserId(){ return userId;}
