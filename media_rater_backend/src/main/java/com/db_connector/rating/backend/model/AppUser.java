@@ -30,14 +30,14 @@ public class AppUser {
 
     // setters and getters
     public int getUserId(){ return userId;}
-    public String getUserName(){ return username;}
-    public String getFirstName(){ return firstName;}
-    public String getLastName(){ return lastName;}
+    public String getUsername(){ return username;}
+    public String getFirstname(){ return firstName;}
+    public String getLastname(){ return lastName;}
     public String getPassword(){ return password;}
     
     public void setUserId(int userId){ this.userId = userId;}
-    public void getUserName(String username){ this.username = username;}
-    public void getfirstName(String firstName){ this.firstName = firstName;}
-    public void getlastName(String lastName){ this.lastName = lastName;}
-    public void getPassword(String password){ this.password = password;}
+    public void setUsername(String username){ this.username = username;}
+    public void setFirstname(String firstName){ this.firstName = firstName;}
+    public void setLastname(String lastName){ this.lastName = lastName;}
+    public void setPassword(String password){ this.password = password;}
 }

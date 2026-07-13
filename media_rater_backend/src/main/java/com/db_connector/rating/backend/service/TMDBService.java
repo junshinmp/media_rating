@@ -6,13 +6,10 @@ import org.springframework.web.client.RestClient;
 
 @Service
 public class TMDBService {
-    @Value("${tmdb.api.key}")
-    private String api_key;
-
     @Value("${tmdb.api.token}")
     private String api_token;
 
-    private RestClient restClient;
+    private final RestClient restClient;
 
     public TMDBService(RestClient restClient){
         this.restClient = restClient;
