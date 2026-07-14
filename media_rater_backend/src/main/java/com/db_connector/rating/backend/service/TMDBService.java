@@ -24,11 +24,10 @@ public class TMDBService {
     }
 
     public String mediaFromId(String id) {
-    return restClient.get()
-            // Make sure external_source=imdb_id is added as a query param!
-            .uri("/find/{id}?external_source=imdb_id&language=en-US", id)
-            .header("Authorization", "Bearer " + api_token)
-            .retrieve()
-            .body(String.class);
+        return restClient.get()
+                    .uri("/movie/{id}?language=en-US", id)
+                    .header("Authorization", "Bearer " + api_token)
+                    .retrieve()
+                    .body(String.class);
     }
 }

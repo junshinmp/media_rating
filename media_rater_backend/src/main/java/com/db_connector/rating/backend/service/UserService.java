@@ -19,6 +19,15 @@ public class UserService {
         return userRepository.findByUsername(username);
     }
 
+    public AppUser getUserById(int userId) {
+        return userRepository.findById(userId)
+                .orElseThrow(() -> new IllegalArgumentException("User with ID " + userId + " not found."));
+    }
+
+    public boolean userExists(int userId) {
+        return userRepository.existsById(userId);
+    }
+
     public boolean existsByUsername(String username){
         return userRepository.existsByUsername(username);
     }
@@ -58,5 +67,14 @@ public class UserService {
         return userRepository.save(currUser);
     }
 
+    public AppUser login(String username, String password){
+        AppUser currUser = userRepository.findByUsername(username)
+                .orElseThrow(() -> new IllegalArgumentException("User does not exist with such username."));
 
+        if (!currUser.getPassword().equals(password)) {
+            throw new IllegalArgumentException("Incorrect password.");
+        }
+    
+        return currUser;
+    }   
 }

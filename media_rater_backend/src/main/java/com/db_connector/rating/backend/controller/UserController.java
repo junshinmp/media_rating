@@ -22,6 +22,24 @@ public class UserController {
         this.userService = userService;
     }
 
+    @GetMapping("/userById")
+    public ResponseEntity<?> getUserById(@RequestParam int userId) {
+        try {
+            AppUser user = userService.getUserById(userId);
+            return ResponseEntity.ok(user);
+        } catch (IllegalArgumentException ie) {
+            return ResponseEntity.badRequest().body(ie.getMessage());
+        }
+    }
+
+    @GetMapping("/checkUsername")
+    public ResponseEntity<Boolean> existsByUsername(@RequestParam String username) {
+        boolean exists = userService.existsByUsername(username);
+        return ResponseEntity.ok(exists);
+    }
+
+    
+
     @GetMapping("/findUsers")
     public ResponseEntity<?> findByUsername(@RequestParam String username) {
         try {
@@ -65,6 +83,19 @@ public class UserController {
     {
         try {
             AppUser currUser = userService.changePassword(userID, currentPass, newPass);
+            return ResponseEntity.ok(currUser);
+        } catch (IllegalArgumentException ie){
+            return ResponseEntity.badRequest().body(ie.getMessage());
+        }
+    }
+
+    @PostMapping("/login")
+    public ResponseEntity<?> login(@RequestBody LoginRequest loginRequest){
+        try {
+            AppUser currUser = userService.login(
+                loginRequest.getUsername(), 
+                loginRequest.getPassword()
+            );
             return ResponseEntity.ok(currUser);
         } catch (IllegalArgumentException ie){
             return ResponseEntity.badRequest().body(ie.getMessage());

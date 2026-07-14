@@ -32,7 +32,6 @@ public class Rating {
 
     private String comments;
 
-
     // Empty Constructor for the Spring Data JPA
     public Rating(){}
 
