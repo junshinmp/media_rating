@@ -22,6 +22,10 @@ public class UserController {
         this.userService = userService;
     }
 
+    /**
+     * =============================== FIND STATEMENTS ===============================
+     */
+
     @GetMapping("/userById")
     public ResponseEntity<?> getUserById(@RequestParam int userId) {
         try {
@@ -56,6 +60,10 @@ public class UserController {
     public ResponseEntity<List<AppUser>> findAllUsers(){
         return ResponseEntity.ok(userService.findAllUsers());
     }
+
+    /**
+     * ======================== TRANSACTIONAL STATEMENTS ========================
+     */
 
     @DeleteMapping("/deleteUser")
     public ResponseEntity<String> deleteByUsername(@RequestParam String username) {
